@@ -45,6 +45,13 @@ description: cpp libs, including techinique and use
 - lexicographical_compare
     - use `algorithm::sort` on string to get it
 
+### Gain Input
+- iostream
+- cstdio
+    - sscanf, sprintf
+- getchar
+    - `char c = (char)getchar();`
+
 ## Treat Number
 ### cmath
 - `cmath.round`
@@ -114,7 +121,7 @@ cmath
 cstdio
 cstring
 climits
-string
+string //getline, to_string...
 utility
 vector
 map

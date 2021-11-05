@@ -3,16 +3,15 @@
 #include <algorithm>
 using namespace std;
 
-bool judge(int a, int b){
-    int t;
-    while ( b != 0 ){
-        t = b;
-        b = a % b;
-        a = t;
+bool gcd(int a, int b){
+    int x=max(a, b), y=min(a, b),
+        t;
+    while (x%y != 0){
+        t = y;
+        y = x % y;
+        x = t;
     }
-    if (t != 1)
-        return true;
-    return false;
+    return (y != 1) ? true : false;
 }
 
 int main(){
@@ -38,7 +37,7 @@ int main(){
         }
 
 
-        if (!judge(max(a, b), min(a, b))){
+        if (!gcd(a, b)){
             cout << "Pair #" << time << ": Love is not all you need!\n";
         }
         else{
