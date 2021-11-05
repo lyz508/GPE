@@ -57,6 +57,11 @@ description: cpp libs, including techinique and use
     - atoi will need to use integer
     - `#inlcude <string>`
 
+### Convert number to string
+```cpp=
+std::string str = std::to_string(num);
+```
+
 ## Treat string 
 ### Find_\*_of
 - String method
