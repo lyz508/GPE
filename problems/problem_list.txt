@@ -1,0 +1,107 @@
+10038: Disk Tree  	
+10409: A mid-summer nightâs dream  	
+10414: Bangla Numbers  	
+10416: Last Digit  數學	
+10417: The Hotel with Infinite Rooms  	
+10418: Minesweeper  模擬	
+10421: All You Need Is Love  最大公因數進制轉換	
+10422: Is This Integration ?  	
+10429: Contest Scoreboard  DP	
+10432: Mine Sweeper  	
+10437: Zeros and Ones  	
+10456: Largest Square  	
+10465: Necklace  	
+10468: Maximum Product  	
+10471: COUNTING CHAOS  	
+10500: Brick Wall Patterns  DP費氏數列	
+10501: Safe Salutations  	
+10503: Show the Sequence  	
+10505: Center of Masses  	
+10520: Conformity  	
+10528: Light, more light  	
+10531: Zipf's Law  	
+10533: The Trip  	
+10535: Prime Distance  	
+10551: Bee Maja  	
+10552: Automated Judge Script  	
+10559: I Love Big Numbers !  	
+10567: Common Permutation  	
+10579: Hay Points  	
+10582: Power Strings  搜尋質因數分解	
+10600: Network Connections  	
+10601: Eternal Truths  	
+10602: Longest Paths  DPLCS	
+10603: Cutting Sticks  	
+10604: Packing polygons  	
+10605: Count the Trees  DP質因數分解	
+10606: How Big Is It?  CircleGeometryMath	
+10607: Joseph's Cousin  	
+10608: Minimal coverage  	
+10610: Curling up the cube  	
+10613: Tug of War  	
+10615: Divisibility  	
+10621: Luggage  DP子集和問題	
+10633: Take the Land  	
+10636: Gopher II  	
+10637: Tight words  	
+10642: Marbles  數論輾轉相除法	
+10644: The Tourist Guide  	
+10645: Euclid Problem  數論輾轉相除法	
+10655: Sumsets  	
+10658: Is Bigger Smarter?  	
+10675: Urn-ball Probabilities!  	
+10679: Irreducible Basic Fractions  	
+10732: Snow Clearing  	
+10741: The Grand Dinner  	
+10766: Antimatter Ray Clearcutting  	
+10906: Matrix Decompressing  	
+11006: Rank the Languages  	
+11017: Longest Common Subsequence  DPLCS	
+11019: Die Game  模擬	
+11028: Digit Primes  區間問題質數	
+11041: Children's Game  	
+11067: Cola  	
+11130: The Priest Mathematician  	
+11174: Homer Simpson  DP、Greedy	
+11179: Wavio Sequence  	
+11184: Opening Doors  	
+11192: Simple Minded Hashing  	
+11266: Generate random numbers  	
+21944: Power Crisis  	
+21964: Fill the Containers  	
+22151: Big Mod  	
+22161: Euclid Problem  數論輾轉相除法	
+22171: Dungeon Master  	
+22181: Dollars  找零問題	
+22351: Quirksome Squares  	
+22821: Oil Deposits  	
+23551: Largest Square  	
+23571: Smith Numbers  質因數分解質數	
+23581: Glass Beads  	
+23651: The jackpot  	
+23661: Bit Mask  	
+23671: Camel trading  	
+23681: Bachet's Game  背包	
+23771: Lexicographic Order  	
+23781: Making Change  DPGreedy找零問題有限背包	
+24461: Sum of Consecutive Prime Numbers  	
+24681: Perfection  prime	
+24731: Roads in the North  	
+24911: Robot Instructions  模擬	
+24931: Extend to Palindromes  字串處理迴文	
+24941: Uncompress  字串處理	
+25081: Solving Maze Problems 
+2008-06: Parser and evaluator  	
+2008-19: Set partition  	
+2008-28: Longest monotonically increasing subsequence  DPLCS	
+2008-37: Prefix expression evaluation  	
+2009-02: Line Overlap Problem  	
+2009-17: Binary tree traversals  	
+2009-24: Unique lines  	
+2015-01: Missing Numbers  	
+2015-02: Recursion and Mod  費氏數列	
+2015-03: Sudoku (As Good As Lee Hsien Loong)  	
+2015-04: The N-th Element  字串排列遞迴	
+2015-07: Minimum Path Sum  	
+2015-08: Climbing Stairs  	
+2015-09: Longest Increasing Subsequence  DPLCS	
