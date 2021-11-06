@@ -86,6 +86,31 @@ if (a != string::npos){
 - return `string::npos` if not found
 - diff with `string::find_first_of`
     - need all matched to the searching string
+### 字串內轉數字
+- 在iterate 的途中變換
+    - ex. 24941--Uncompress text
+    ```cpp=
+    for (int i=0; i<tmp.length(); i++){
+        // turn word
+        if ( i<tmp.length() && isalpha(tmp[i]) ){
+            string word = "";
+            while ( isalpha(tmp[i]) ){
+                word += tmp[i++];
+            }
+        }
+        // turn number
+        if ( i<tmp.length() && isdigit(tmp[i]) ){
+            int v = 0;
+            while ( isdigit(tmp[i]) ){
+                v = v * 10 + tmp[i++] - '0';
+            }
+        }
+        if ( i<tmp.length() && !isalnum(tmp[i]) ){
+            // pass...
+        }
+    }
+    ```
+
 
 ## Sort and Find
 - `log(n) + 1` (on sorted array)
@@ -99,7 +124,7 @@ if (a != string::npos){
         cout << it - v.begin() << endl; // output the index
         ```
         
-## Number Treatment
+## Number Theory
 ### Euclidean Algorithm
 - for divisor and dividend
     - let a: dividend, b: divisor
@@ -114,6 +139,17 @@ while (b != 0){
 printf ("GCD: %d", t);
 ```
 
+## Judgement
+### <cctype>
+- isalpha
+- isalnum
+    - '!=0': true
+    - '==0': false
+- islower
+- isupper
+
+
+
 ## 函式庫
 ```
 iostream
@@ -121,6 +157,7 @@ cmath
 cstdio
 cstring
 climits
+cctype
 string //getline, to_string...
 utility
 vector
