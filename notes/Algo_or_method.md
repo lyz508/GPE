@@ -48,3 +48,37 @@ for (int i=0; i<tmp.length(); i++){
     }
 }
 ```
+
+### Example
+1. 24941 Uncompress text
+
+## 卡特蘭數 (Catalan Number)
+- 括號匹配、標準young 表，出棧序列、Dyck Words、找零錢、筆畫群峰...
+- 二叉樹數量，不相交弦問題...
+- 為比自身小的子問題集合而成
+- 以不合法路徑做理解。
+```
+序列數
+1 , 1 , 2 , 5 , 14 , 42 , 132 , 429 , 1430 , 4862 , 16796 , 58786 , 208012 , 742900 , 2674440 , 9694845 , 35357670 , 129644790
+```
+```
+Definition
+fn=f0∗fn−1+f1∗fn−2+…+fn−1*f0
+```
+
+### Implementation (Build table)
+```cpp=
+void catalen(){
+    dp[0] = 1;
+    dp[1] = 1;
+    for (int n=2; n<=20; n++){
+        for (int i=0; i<n; i++){
+            dp[n] += dp[i]*dp[n-1-i];
+        }
+    }
+}
+```
+
+### Example
+1. 10501 Safe Salutations (不相交弦問題)
+2. 10605 Count the Tree (二叉樹數目問題)
