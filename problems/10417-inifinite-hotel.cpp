@@ -1,15 +1,17 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 int main(){
-    long long l, s;
-    while ( cin >> s >> l ){
-        while ( 1 ){
-            l -= s;
-            if ( l <= 0 ) break;
+    long long s, d;
+    while (cin >> s >> d){
+        while (1){
+            d -= s;
+            if (d <= 0)
+                break;
             s++;
         }
-        cout << s << "\n";
+        printf("%lld\n", s);
     }
 
     return 0;

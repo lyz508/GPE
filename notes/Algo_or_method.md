@@ -253,6 +253,7 @@ string BigAdd(string s1, string s2){
 - isalpha
 - islower
 - isupper
+- tolower, toupper
 
 ### cmath
 - max, min
@@ -262,3 +263,13 @@ string BigAdd(string s1, string s2){
 
 ### utility
 - pair<T, T>
+
+
+## 判斷完全平方
+```cpp=
+int j = sqrt(n);
+if ( j*j == n )
+    printf("yes\n");
+else
+    printf("no\n");
+```

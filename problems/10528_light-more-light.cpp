@@ -1,13 +1,16 @@
 #include <iostream>
+#include <cstdio>
 #include <cmath>
 using namespace std;
 
 int main(){
-    unsigned int n, sq;
+    long long n;
     while (cin >> n && n != 0){
-        sq = sqrt(n);
-        cout << ((sq * sq == n) ? "yes" : "no") << "\n";
+        long long j = sqrt(n);
+        if ( j*j == n )
+            printf("yes\n");
+        else
+            printf("no\n");
     }
-
     return 0;
 }
