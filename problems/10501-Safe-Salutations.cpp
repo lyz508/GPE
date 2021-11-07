@@ -17,10 +17,17 @@ void catalen(){
 
 int main(){
     int n;
+    bool f = true;
     dp.resize(21);
     catalen();
 
     while (cin >> n){
+        // Presentation
+        if (f) 
+            f = false;
+        else
+            printf("\n");
+        
         printf("%lld\n", dp[n]);
     }
 
