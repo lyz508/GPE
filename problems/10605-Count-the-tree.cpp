@@ -86,20 +86,6 @@ string BigAdd(string s1, string s2){
 
     // add
     for (int i=0, t; i<sum.size()-1; i++){
-        // for (int i=0; i<n1.size(); i++){
-        //     printf("%d", n1[i]);
-        // }
-        // printf("\n");
-        // for (int i=0; i<n2.size(); i++){
-        //     printf("%d", n2[i]);
-        // }
-        // printf("\n");
-        // for (int i=0; i<sum.size(); i++){
-        //     printf("%d", sum[i]);
-        // }
-        // printf("\n");
-
-
         if (i < n2.size()){
             t = n1[i] + n2[i] + sum[i];
             sum[i] = t % 10;
