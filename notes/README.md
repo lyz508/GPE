@@ -152,6 +152,7 @@ printf ("GCD: %d", t);
 
 ## 函式庫
 ```
+<bits/stdc++.h>
 iostream
 cmath
 cstdio

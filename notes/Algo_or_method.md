@@ -213,7 +213,6 @@ string BigAdd(string s1, string s2){
 
 ## 階乘頭級
 
-
 ## 常用函式
 ### Algorithm
 - sort
@@ -273,3 +272,5 @@ if ( j*j == n )
 else
     printf("no\n");
 ```
+
+## KnapSack Problem
