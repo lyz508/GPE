@@ -263,6 +263,9 @@ string BigAdd(string s1, string s2){
 ### utility
 - pair<T, T>
 
+### cfloat
+- Constant: FLT_MIN
+
 
 ## 判斷完全平方
 ```cpp=
