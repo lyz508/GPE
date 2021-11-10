@@ -277,3 +277,7 @@ else
 ```
 
 ## KnapSack Problem
+
+## KMP Algorithm 
+- Objective: 在字串內尋找特定字串
+### Failure Function
