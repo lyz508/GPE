@@ -10,7 +10,7 @@ using namespace std;
  */
 void LIS(vector<int> seq){
     int longest, pos;
-    vector<int> len = vector<int>(seq.size(), 0),
+    vector<int> len = vector<int>(seq.size(), 1),
         prev = vector<int>(seq.size(), -1),
         output;
 

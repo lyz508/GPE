@@ -7,7 +7,7 @@ using namespace std;
 #define ele pair<int, int>
 
 void find(vector< pair<int, ele> > seq){
-    vector<int> len = vector<int>(seq.size(), 0),
+    vector<int> len = vector<int>(seq.size(), 1),
                 prev = vector<int>(seq.size(), -1),
                 output;
     int max, pos;

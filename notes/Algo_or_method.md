@@ -277,6 +277,9 @@ else
 ```
 
 ## KnapSack Problem
+- Classification
+    1. 0/1 Knapsack Problem
+
 
 ## KMP Algorithm 
 - Objective: 在字串內尋找特定字串第一次出現位置
@@ -364,7 +367,7 @@ for (int t=0; t<n; t++){
  */
 void LIS(vector<int> seq){
     int longest, pos;
-    vector<int> len = vector<int>(seq.size(), 0),
+    vector<int> len = vector<int>(seq.size(), 1), // initial, all have len = 1
                 prev = vector<int>(seq.size(), -1),
                 output;
 
