@@ -333,4 +333,71 @@ void KMP(string str, string target){
 }
 ```
 
+## Bellman Ford
+```cpp=
+// Bellman Ford(SPFA)
+// s: start
+// es: edges
+// ns: nodes
+
+ns[s] = 0;
+for (int t=0; t<n; t++){
+    for (int i=0; i<es.size(); i++){
+        u = es[i].u;
+        v = es[i].v;
+        if (ns[v] > ns[u] + es[i].w)
+            ns[v] = ns[u] + es[i].w;
+    }
+}
+```
+- 10602 Longest Path
+
 ## LCS Longest Common Subsequence
+
+
+## LIS Longest Increasing Subsequence
+```cpp=
+/* LIS: Longest Increasing Subsequence
+ * len: record IS length
+ * prev: record last pos
+ * print out: find longest, by prev to print out
+ */
+void LIS(vector<int> seq){
+    int longest, pos;
+    vector<int> len = vector<int>(seq.size(), 0),
+                prev = vector<int>(seq.size(), -1),
+                output;
+
+    // dp len
+    for (int i=0; i<seq.size(); i++){
+        for (int j=i+1; j<seq.size(); j++){
+            if (seq[i] < seq[j] && len[i] + 1 > len[j]){
+                len[j] = len[i] + 1;
+                prev[j] = i;
+            }
+        }
+    }
+
+    // find longest
+    longest = len[0];
+    pos = 0;
+    for (int i=1; i<seq.size(); i++){
+        if (len[i] > longest){
+            longest = len[i];
+            pos = i;
+        }
+    }
+
+    // print out
+    printf("Longest Increasing Subsequence: ");
+    while (true){
+        output.push_back(seq[pos]);
+        if (prev[pos] == -1)
+            break;
+        pos = prev[pos];
+    };
+    reverse(output.begin(), output.end());
+    for (int i: output)
+        printf("%d ", i);
+}
+```
