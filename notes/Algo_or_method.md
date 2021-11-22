@@ -166,19 +166,6 @@ string BigAdd(string s1, string s2){
 
     // add
     for (int i=0, t; i<sum.size()-1; i++){
-        // for (int i=0; i<n1.size(); i++){
-        //     printf("%d", n1[i]);
-        // }
-        // printf("\n");
-        // for (int i=0; i<n2.size(); i++){
-        //     printf("%d", n2[i]);
-        // }
-        // printf("\n");
-        // for (int i=0; i<sum.size(); i++){
-        //     printf("%d", sum[i]);
-        // }
-        // printf("\n");
-
 
         if (i < n2.size()){
             t = n1[i] + n2[i] + sum[i];
@@ -210,8 +197,6 @@ string BigAdd(string s1, string s2){
 
 ```
 
-
-## 階乘頭級
 
 ## 常用函式
 ### Algorithm
@@ -276,9 +261,69 @@ else
     printf("no\n");
 ```
 
-## KnapSack Problem
+## KnapSack Problem (背包問題)
 - Classification
     1. 0/1 Knapsack Problem
+
+### Implementation
+```cpp=
+/* KnapSack Problem:
+ *  find largest weight can be put into knapsack
+ * w_sum: all weight sum
+ * n: total number of items
+ * value: array of value
+ * weight: array of weight
+ * cost: array recording height value of current weight; Length: sum+1 */
+
+void KnapSack(){
+    for (int i=0; i<n; i++){
+        for (int j=w_sum; j>=weight[i]; j--){
+            cost[j] = max(
+                cost[j], 
+                cost[j - weight[i]] + value[i]
+            );
+        }
+    }
+
+    printf("Heighest value: %d", cost[w_sum]);
+}
+```
+```cpp=
+/* KnapSack Problem:
+ *  1. find largest weight can be put into knapsack
+ *  2. give one combination of largest situation
+ * w_sum: all weight sum
+ * n: total number of items
+ * value: array of value
+ * weight: array of weight
+ * cost: array recording height value of current weight; Length: sum+1 
+ * record: bool array, record if item can be put in that weight
+ */
+
+void KnapSack(){
+    for (int i=0; i<n; i++){
+        for (int j=w_sum; j>=weight[i]; j--){
+            if (cost[j - weight[i]] + value[i] > cost[j]){
+                cost[j] = cost[j - weight[i]] + value[i];
+                record[i][j] = true;
+            }
+        }
+    }
+
+    // print out item
+    for (int i=n-1, j=w_sum; i>=0; i--){
+        if (record[i][j]){
+            printf("Have %dth item\n", i);
+            j -= weight[i];
+        }
+    }
+    printf("Heighest value: %d", cost[w_sum]);
+}
+
+```
+
+
+
 
 
 ## KMP Algorithm 
