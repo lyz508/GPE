@@ -354,6 +354,30 @@ for (int t=0; t<n; t++){
 - 10602 Longest Path
 
 ## LCS Longest Common Subsequence
+- LIS 前身
+- 實作方便，空出兩個sequence 前面第一位
+- 遞迴判斷式
+  - 相同 -> 為i-1, j-1 + 1 (都不選的len 長度 -> 此次len 長度)
+  - 不相同 -> 為 i-1 j, i j-1 取max (不選其中一個字串的最大值)
+```cpp=
+string s1, s2;
+
+void LCS(){
+    vector< vector<int> > len(s1.size(), vector<int>(s2.size(), 0));
+
+    for (int i=1; i<s1.size(); i++){
+        for (int j=1; j<s2.size(); j++){
+            if (s1[i] == s2[j])
+                len[i][j] = len[i-1][j-1] + 1;
+            else
+                len[i][j] = max(len[i-1][j], len[i][j-1]);
+        }
+    }
+
+    // longest length
+    printf("%d\n", len[s1.size()-1][s2.size()-1]);
+}
+```
 
 
 ## LIS Longest Increasing Subsequence
@@ -402,3 +426,5 @@ void LIS(vector<int> seq){
         printf("%d ", i);
 }
 ```
+
+### BackTracking To find all LIS
