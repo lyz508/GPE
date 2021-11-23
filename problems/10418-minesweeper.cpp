@@ -6,20 +6,17 @@ using namespace std;
 vector< vector<char> > map;
 
 // transfer
-char decide(int x, int y){
-    if (map[x][y]=='*') return '*';
-    int rtn = 0;
+char find(int x, int y){
+    if (map[x][y] == '*')
+        return '*';
 
+    int rtn = 0;
     for (int r=-1; r<=1; r++){
         for (int c=-1; c<=1; c++){
-
-            if (x+r < map.size() && x+r >= 0 &&
-                y+c < map[0].size() && y+c >= 0){
-                if (map[x+r][y+c] == '*'){
-                    rtn++;
-                }
-            }
-
+            if (x+r >= 0 && x+r < map.size() &&
+                y+c >= 0 && y+c < map[0].size())
+                if (map[x+r][y+c] == '*')
+                    rtn ++;
         }
     }
 
@@ -52,7 +49,7 @@ int main(){
         
         for (int r=0; r<m; r++){
             for (int c=0; c<n; c++){
-                cout << decide(r, c);
+                cout << find(r, c);
             }
             cout << "\n";
         }

@@ -4,14 +4,16 @@
 using namespace std;
 
 bool gcd(int a, int b){
-    int x=max(a, b), y=min(a, b),
-        t;
-    while (x%y != 0){
+    int x = max(a, b),
+        y = min(a, b), t;
+
+    while (x % y != 0){
         t = y;
-        y = x % y;
+        y = x%y;
         x = t;
     }
-    return (y != 1) ? true : false;
+
+    return (y == 1)? false : true;
 }
 
 int main(){

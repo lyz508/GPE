@@ -1,15 +1,9 @@
 #include <iostream>
-#include <cstdio>
 #include <vector>
-#include <cmath>
+#include <cstdio>
 #include <algorithm>
-#include <string>
-#include <cstring>
 #include <sstream>
 using namespace std;
-
-vector< string > dp;
-vector< string > fac;
 
 string toString(vector<int> v){
     string rtn;
@@ -79,49 +73,13 @@ string BigMulti(string n1, string n2){
     return toString(sum);
 }
 
-string toStr(int n){
-    stringstream ss;
-    ss << n;
-    string rtn;
-    ss >> rtn;
-    return rtn;
-}
-
-void Catalan(){
-    dp.resize(301);
-    dp[0] = "1";
-    dp[1] = "1";
-    for (int n=2; n<301; n++){
-        string sum = "0";
-        for (int i=0; i<n; i++){
-            sum = BigAdd(sum, BigMulti(dp[i], dp[n-1-i]));
-        }
-        dp[n] = sum;
-    }
-
-    // factorail
-    fac.resize(301);
-    fac[0] = "1";
-    fac[1] = "1";
-    for (int n=2; n<301; n++){
-        string sum = "1";
-        for (int i=2; i<=n; i++)
-            sum = BigMulti(sum, toStr(i));
-        fac[n] = sum;
-    }
-
-    for (int i=0; i<301; i++){
-        dp[i] = BigMulti(dp[i], fac[i]);
-    }
-}
 
 int main(){
-    Catalan();
+    string t1, t2;
 
-    int tmp;
-    while (cin >> tmp && tmp != 0){
-        printf("%s\n", dp[tmp].c_str());
-    }
+    cin >> t1 >> t2;
+    // printf("%s\n", BigAdd(t1, t2).c_str());
+    printf("%s\n", BigMulti(t1, t2).c_str());
 
     return 0;
 }

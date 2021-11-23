@@ -3,21 +3,22 @@
 using namespace std;
 
 // only return last digit
-int fp(int n, int p){
-    if (p == 1) // end condition
+int fp_mod(int n, int p){
+    if (p == 1)
         return n;
 
-    int rtn, cp;
-    if ( p%2 == 0 ){ // even
-        cp = fp(n, p/2);
-        rtn = cp * cp;
+    int rtn, tmp;
+
+    if (p%2 != 0){
+        tmp = fp_mod(n, (p-1)/2);
+        rtn = n * tmp * tmp;
     }
-    else{ // odd
-        cp = fp(n, (p-1)/2);
-        rtn = n * cp * cp;
+    else{
+        tmp = fp_mod(n, p/2);
+        rtn = tmp * tmp;
     }
 
-    return rtn % 10;
+    return rtn%10;
 }
 
 int main(){
@@ -27,7 +28,7 @@ int main(){
     table[0] = 0;
     for (int i=1; i<100; i++){
         int a = i % 10;
-        table[i] = (fp(a, i) + table[i-1]) % 10;
+        table[i] = (fp_mod(a, i) + table[i-1]) % 10;
     }
 
 

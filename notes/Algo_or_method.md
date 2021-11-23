@@ -88,113 +88,66 @@ void catalen(){
 ## 大數
 ### 大數加法
 ```cpp=
-string BigMulti(string s1, string s2){
-    string res = "";
-    vector< int > n1, n2, sum, tmp;
-
-    for (int i=0; i<s1.length(); i++)
-        n1.push_back(s1[i] - '0');
-    for (int i=0; i<s2.length(); i++)
-        n2.push_back(s2[i] - '0');
-    sum.resize(n1.size() + n2.size() + 1);
-
-    reverse(n1.begin(), n1.end());
-    reverse(n2.begin(), n2.end());
-
-    // switch
+string BigAdd(string n1, string n2){
     if (n1.size() < n2.size()){
-        tmp = n1;
+        string tmp = n1;
         n1 = n2;
         n2 = tmp;
     }
 
-    // multi
-    for (int i=0; i<n2.size(); i++){
-        for (int j=0; j<n1.size(); j++){
-            sum[i+j] += n2[i]*n1[j];
+    for (int i=n2.size()-1, j=n1.size()-1; i>=0; i--, j--){
+        n1[j] = n1[j] + (n2[i]-'0');
+    }
+
+    for (int i=n1.size()-1; i>0; i--){
+        if (n1[i] > '9'){
+            n1[i-1] += (n1[i]-'0')/10;
+            n1[i] = '0'+(n1[i]-'0')%10;
         }
     }
 
-    // carry
-    for (int i=0; i<sum.size(); i++){
-        if (sum[i] >= 10){
-            sum[i+1] += sum[i]/10;
-            sum[i] %= 10;
-        }
+    if (n1[0] > '9'){
+        n1[0] = '0'+(n1[0]-'0')%10;
+        n1 = '1'+n1;
     }
-
-    // output
-    bool f = false;
-    for (int i=sum.size()-1; i>=0; i--){
-        if (!f){
-            if (sum[i] != 0)
-                f = true;
-        }
-        if (f){
-            res += '0' + sum[i];
-        }
-    }
-
-    return res;
+    
+    return n1;
 }
 ```
 ### 大數乘法
 ```cpp=
-
-string BigAdd(string s1, string s2){
-    vector< int > n1, n2, sum, tmp;
-    string res = "";
-    bool f = false;
-
-    for (int i=0; i<s1.length(); i++)
-        n1.push_back(s1[i] - '0');
-    for (int i=0; i<s2.length(); i++)
-        n2.push_back(s2[i] - '0');
-
-    reverse(n1.begin(), n1.end());
-    reverse(n2.begin(), n2.end());
-
-
-    // switch
+string BigMulti(string n1, string n2){
+    vector<int> sum(n1.size()+n2.size()+3, 0);
     if (n1.size() < n2.size()){
-        tmp = n1;
+        string tmp = n1;
         n1 = n2;
         n2 = tmp;
     }
-    sum.resize(n1.size() + 10);
 
-
-    // add
-    for (int i=0, t; i<sum.size()-1; i++){
-
-        if (i < n2.size()){
-            t = n1[i] + n2[i] + sum[i];
-            sum[i] = t % 10;
-            sum[i+1] += t / 10;
+    for (int i=n2.size()-1; i>=0; i--){
+        for (int j=n1.size()-1; j>=0; j--){
+            sum[(n2.size()-1-i)+(n1.size()-1-j)] += 
+                (n1[j]-'0') * (n2[i]-'0');
         }
-        else if (i < n1.size()){
-            sum[i+1] += n1[i] / 10;
-            sum[i] += n1[i] % 10;
-        }
-        else{
+    }
+
+    for (int i=0; i<sum.size()-1; i++){
+        if (sum[i] > 9){
             sum[i+1] += sum[i]/10;
             sum[i] %= 10;
         }
     }
 
-    for (int i=sum.size()-1; i>=0; i--){
-        if (!f){
-            if (sum[i] != 0)
-                f = true;
-        }
-        if (f)
-            res += '0' + sum[i];
-    }
+    // erase 0
+    reverse(sum.begin(), sum.end());
+    while (sum.size() > 0 && sum[0] == 0)
+        sum.erase(sum.begin());
+    // judge 0
+    if (sum.size() == 0)
+        sum.push_back(0);
 
-
-    return res;
+    return toString(sum);
 }
-
 ```
 
 

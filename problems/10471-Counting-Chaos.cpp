@@ -51,13 +51,16 @@ int main(){
         cin >> tmp;
 
         num=0;
-        for (int s=0; s<tmp.length(); s++){
-            if ( isdigit(tmp[s]) ){
-                num = 10*num + (tmp[s] - '0');
+        for (int i=tmp.size()-1, j = 1; i>=0; i--){
+            if ( isdigit(tmp[i]) ){
+                num += (tmp[i]-'0') * j;
+                j *= 10;
             }
         }
+
+        // strictly upper bound
         vector<int>::iterator itr = upper_bound(table.begin(), table.end(), num);
-        
+
         // output
         sprintf(output, "%04d", *itr);
         for (int i=0; i<5; i++){
