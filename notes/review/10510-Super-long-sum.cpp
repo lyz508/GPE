@@ -3,30 +3,30 @@
 #include <vector>
 using namespace std;
 
-string BigAdd(string n1, string n2){
-    if (n1.size() < n2.size()){
-        string tmp = n1;
-        n1 = n2;
-        n2 = tmp;
+string BigAdd(string num1, string num2){
+    if (num1.size() < num2.size()){
+        string tmp = num1;
+        num1 = num2;
+        num2 = tmp;
     }
 
-    for (int i=n2.size()-1, j=n1.size()-1; i>=0; i--, j--){
-        n1[j] = n1[j] + (n2[i]-'0');
+    for (int i=num1.size()-1, j=num2.size()-1; i>=0; i--, j--){
+        num1[i] = num1[i] + (num2[j] - '0');
     }
 
-    for (int i=n1.size()-1; i>0; i--){
-        if (n1[i] > '9'){
-            n1[i-1] += (n1[i]-'0')/10;
-            n1[i] = '0'+(n1[i]-'0')%10;
+    for (int i=num1.size()-1; i>0; i--){
+        if (num1[i] > '9'){
+            num1[i-1] += (num1[i] - '0')/10;
+            num1[i] = '0' + (num1[i] - '0') % 10;
         }
     }
 
-    if (n1[0] > '9'){
-        n1[0] = '0'+(n1[0]-'0')%10;
-        n1 = '1'+n1;
+    if (num1[0] > '9'){
+        num1[0] = '0' + (num1[0] - '0')%10;
+        num1 = '1' + num1;
     }
-    
-    return n1;
+
+    return num1;
 }
 
 int main(){

@@ -428,3 +428,16 @@ void LIS(vector<int> seq){
 ```
 
 ### BackTracking To find all LIS
+
+## DP Dynamic Programming
+### 區間DP
+
+
+- `10603` Cutting Sticks
+
+
+## Setting Value
+### INF -> 0x3f3f3f3f
+```
+int inf = 0x3f3f3f3f;
+```

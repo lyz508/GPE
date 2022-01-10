@@ -18,7 +18,7 @@ int main(){
             double now = 0.3*sqrt(tmp-v0) * i;
             if ( tmp <= v0 ) break;
 
-            // compare if equal
+            // compare if equal, equal -> isn't unique
             sprintf(s1, "%.10lf", now);
             sprintf(s2, "%.10lf", max_n);
             if(strcmp(s1, s2) == 0){
