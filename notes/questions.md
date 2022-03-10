@@ -745,6 +745,10 @@ void LCS(){
 }
 ```
 
+## `10607` Joseph's Question
+- linked list 串接頭尾
+- 數到就開槍
+
 
 
 ## 精選複習題
